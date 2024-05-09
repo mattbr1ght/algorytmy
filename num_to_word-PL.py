@@ -44,7 +44,7 @@ def num_to_words(n):
     #for every group do hundreds_to_words(n) and assign a modifier
     for i, n in enumerate(lista):
 
-        i = len(lista) - i - 1 #invert i (how many element left not inclusive) for the purpose of how the modifiers are picked
+        i = len(lista) - i - 1 #invert i (how many element left inclusive) for the purpose of how the modifiers are picked
         anwser += hundreds_to_words(n, i)
         
         #add the modifier
