@@ -24,6 +24,11 @@ def hundreds_to_words(n, i=0):
     
     return anwser
 
+def enumerate(xs, start=0, step=1):
+    for x in xs:
+        yield (start, x)
+        start += step
+
 def num_to_words(n):
     modifiers = [["","",""], ["tysiąc", "tysiące", "tysięcy"], "milion", "miliard", "bilion", "biliard", "trylion", "tryliard", "kwadrylion", "kwadryliard", "kwintylion", "kwintyliard", "sekstylion", "sekstyliard", "septylion", "septyliard", "oktylion", "oktyliard", "nonilion", "noniliard", "decylion", "decyliard", "undecylion", "undecyliard", "duodecylion", "duodecyliard"]
     anwser = ""
@@ -38,13 +43,13 @@ def num_to_words(n):
     if n == "0":
         return "zero"
 
-    #split into groups of three
+    #split into groups of integers of three digits (right aligned)
     lista = [int(n[::-1][i:i+3][::-1]) for i in range(0, len(n), 3)][::-1]
     
     #for every group do hundreds_to_words(n) and assign a modifier
-    for i, n in enumerate(lista):
+    for i, n in enumerate(lista, len(lista)-1, -1):
 
-        i = len(lista) - i - 1 #invert i (how many element left inclusive) for the purpose of how the modifiers are picked
+        #i = len(lista) - i - 1 #invert i (how many element left inclusive) for the purpose of how the modifiers are picked
         anwser += hundreds_to_words(n, i)
         
         #add the modifier
