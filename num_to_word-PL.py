@@ -1,5 +1,6 @@
-def hundreds_to_words(n):
+def hundreds_to_words(n, i=0):
     #init vars
+    anwser = ""
     digits = ["", "jeden", "dwa", "trzy", "cztery", "pięć", "sześć", "siedem", "osiem", "dziewięć"]
     teens = ["dziesięć", "jedenaście", "dwanaście", "trzynaście", "czternaście", "piętnaście", "szesnaście", "siedemnaście", "osiemnaście", "dziewiętnaście"]
     tens = ["", "dziesięć", "dwadzieścia", "trzydzieści", "czterdzieści", "pięćdziesiąt", "sześćdziesiąt", "siedemdziesiąt", "osiemdziesiąt", "dziewięćdziesiąt"]
@@ -41,7 +42,7 @@ def num_to_words(n):
     #for every group do hundreds_to_words(n) and assign a modifier
     for i, n in enumerate(lista):
         i = len(lista) - i - 1 #invert i (how many element left not inclusive) for the purpose of how the modifiers are picked
-        anwser += hundreds_to_words(n)
+        anwser += hundreds_to_words(n, i)
         
         #add the modifier
         if n == 0:
