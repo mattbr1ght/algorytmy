@@ -5,6 +5,7 @@ def hundreds_to_words(n, i=0):
     teens = ["dziesięć", "jedenaście", "dwanaście", "trzynaście", "czternaście", "piętnaście", "szesnaście", "siedemnaście", "osiemnaście", "dziewiętnaście"]
     tens = ["", "dziesięć", "dwadzieścia", "trzydzieści", "czterdzieści", "pięćdziesiąt", "sześćdziesiąt", "siedemdziesiąt", "osiemdziesiąt", "dziewięćdziesiąt"]
     hundreds = ["", "sto", "dwieście", "trzysta", "czterysta", "pięćset", "sześćset", "siedemset", "osiemset", "dziewięćset"]
+
     if n >= 100:
         anwser += hundreds[n//100] + " " 
         n -= ((n//100)*100)
@@ -13,6 +14,7 @@ def hundreds_to_words(n, i=0):
         n-= (n//10)*10
     if n >= 10 and n < 20:
         anwser += teens[n-10] + " "
+
     #the problem of 1
     if n == 1 and i > 0:
         pass
@@ -20,6 +22,7 @@ def hundreds_to_words(n, i=0):
         pass
     elif n < 10:
         anwser += digits[n] + " "
+    
     return anwser
 
 def num_to_words(n):
