@@ -69,16 +69,16 @@ def num_to_words(n):
 
 #testing
 
-print(6, "=", num_to_words(6))
-print(-2, "=", num_to_words(-2))
-print(1, "=", num_to_words(1))
-print(14, "=", num_to_words(14))
-print(36, "=", num_to_words(36))
-print(-96, "=", num_to_words(-96))
-print(-264, "=", num_to_words(-264))
-print(315, "=", num_to_words(315))
-print(708, "=", num_to_words(708))
-print(1111000000000000000000000123, "=", num_to_words(1111000000000000000000000123))
+#print(6, "=", num_to_words(6))
+#print(-2, "=", num_to_words(-2))
+#print(1, "=", num_to_words(1))
+#print(14, "=", num_to_words(14))
+#print(36, "=", num_to_words(36))
+#print(-96, "=", num_to_words(-96))
+#print(-264, "=", num_to_words(-264))
+#print(315, "=", num_to_words(315))
+#print(708, "=", num_to_words(708))
+#print(1111000000000000000000000123, "=", num_to_words(1111000000000000000000000123))
 print(123214043210057407034623062570324007507040040567060504360000004536, "=", num_to_words(123214043210057407034623062570324007507040040567060504360000004536))
 
 
