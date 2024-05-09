@@ -44,23 +44,24 @@ def num_to_words(n):
     
     #for every group do hundreds_to_words(n) and assign a modifier
     for i, n in enumerate(lista):
+
         i = len(lista) - i - 1 #invert i (how many element left not inclusive) for the purpose of how the modifiers are picked
         anwser += hundreds_to_words(n, i)
         
         #add the modifier
-        if n == 0:
+        if n == 0: #if group is 0 then don't add any modifier
             continue
         if n == 1:
             if i < 2:
-                anwser += modifiers[i][0] + " "
+                anwser += modifiers[i][0] + " " #if group is 1
             else:
                 anwser += modifiers[i] + " "
-        elif n%10 < 5 and n%10 > 1 and (n-((n//100)*100))//10 != 1:
+        elif n%10 < 5 and n%10 > 1 and (n-((n//100)*100))//10 != 1: #if the last digit of group belongs to <2;4> and the two last digits don't belong to <10;19>
             if i < 2:
-                anwser += modifiers[i][1] + " "
+                anwser += modifiers[i][1] + " " 
             else:
                 anwser += modifiers[i] + "y "
-        else:
+        else: #else so for any other cases
             if i < 2:
                 anwser += modifiers[i][2] + " "
             else:
